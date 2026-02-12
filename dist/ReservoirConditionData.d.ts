@@ -1,18 +1,20 @@
-export interface ReservoirConditionData {
-    accumulaterainfallincatchment: number;
-    desiltingtunneloutflow: number;
-    drainagetunneloutflow: number;
-    effectivewaterstoragecapacity: number;
-    inflowdischarge: number;
-    observationtime: string;
-    othersoutflow: number;
-    poweroutletoutflow: number;
-    predeterminedcrossflow: number;
-    predeterminedoutflowtime: string;
-    reservoiridentifier: number;
-    spillwayoutflow: number;
-    statustype: number;
-    totaloutflow: number;
-    waterdraw: number;
-    waterlevel: number;
-}
+import { Static, Type } from 'typebox';
+export declare const ReservoirConditionDataSchema: Type.TObject<{
+    accumulaterainfallincatchment: Type.TNumber;
+    desiltingtunneloutflow: Type.TNumber;
+    drainagetunneloutflow: Type.TNumber;
+    effectivewaterstoragecapacity: Type.TNumber;
+    inflowdischarge: Type.TNumber;
+    observationtime: Type.TString;
+    othersoutflow: Type.TNumber;
+    poweroutletoutflow: Type.TNumber;
+    predeterminedcrossflow: Type.TNumber;
+    predeterminedoutflowtime: Type.TString;
+    reservoiridentifier: Type.TNumber;
+    spillwayoutflow: Type.TNumber;
+    statustype: Type.TNumber;
+    totaloutflow: Type.TNumber;
+    waterdraw: Type.TNumber;
+    waterlevel: Type.TNumber;
+}>;
+export type ReservoirConditionData = Static<typeof ReservoirConditionDataSchema>;

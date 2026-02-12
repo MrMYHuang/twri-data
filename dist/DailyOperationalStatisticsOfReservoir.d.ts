@@ -1,17 +1,35 @@
-import type { ReservoirConditionData } from './ReservoirConditionData';
-export interface DailyOperationalStatisticsOfReservoir {
-    crossflow: number;
-    capacity: number;
-    outflow: number;
-    outflowdischarge: number;
-    outflowtotal: number;
-    regulatorydischarge: number;
-    reservoiridentifier: string;
-    reservoirname: string;
-    latestwaterdata: ReservoirConditionData | undefined;
-    basinrainfall: string;
-    datetime: string;
-    dwl: string;
-    inflow: string;
-    nwlmax: string;
-}
+import { Static, Type } from 'typebox';
+export declare const DailyOperationalStatisticsOfReservoirSchema: Type.TObject<{
+    crossflow: Type.TNumber;
+    capacity: Type.TNumber;
+    outflow: Type.TNumber;
+    outflowdischarge: Type.TNumber;
+    outflowtotal: Type.TNumber;
+    regulatorydischarge: Type.TNumber;
+    reservoiridentifier: Type.TString;
+    reservoirname: Type.TString;
+    latestwaterdata: Type.TOptional<Type.TObject<{
+        accumulaterainfallincatchment: Type.TNumber;
+        desiltingtunneloutflow: Type.TNumber;
+        drainagetunneloutflow: Type.TNumber;
+        effectivewaterstoragecapacity: Type.TNumber;
+        inflowdischarge: Type.TNumber;
+        observationtime: Type.TString;
+        othersoutflow: Type.TNumber;
+        poweroutletoutflow: Type.TNumber;
+        predeterminedcrossflow: Type.TNumber;
+        predeterminedoutflowtime: Type.TString;
+        reservoiridentifier: Type.TNumber;
+        spillwayoutflow: Type.TNumber;
+        statustype: Type.TNumber;
+        totaloutflow: Type.TNumber;
+        waterdraw: Type.TNumber;
+        waterlevel: Type.TNumber;
+    }>>;
+    basinrainfall: Type.TString;
+    datetime: Type.TString;
+    dwl: Type.TString;
+    inflow: Type.TString;
+    nwlmax: Type.TString;
+}>;
+export type DailyOperationalStatisticsOfReservoir = Static<typeof DailyOperationalStatisticsOfReservoirSchema>;

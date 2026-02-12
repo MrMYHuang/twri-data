@@ -1,19 +1,21 @@
-import type { ReservoirConditionData } from './ReservoirConditionData';
+import { Static, Type } from 'typebox';
+import { ReservoirConditionDataSchema } from './ReservoirConditionData';
 
-export interface DailyOperationalStatisticsOfReservoir {
-  crossflow: number;
-  capacity: number;
-  outflow: number;
-  outflowdischarge: number;
-  outflowtotal: number;
-  regulatorydischarge: number;
-  reservoiridentifier: string;
-  reservoirname: string;
-  latestwaterdata: ReservoirConditionData | undefined;
+export const DailyOperationalStatisticsOfReservoirSchema = Type.Object({
+  crossflow: Type.Number(),
+  capacity: Type.Number(),
+  outflow: Type.Number(),
+  outflowdischarge: Type.Number(),
+  outflowtotal: Type.Number(),
+  regulatorydischarge: Type.Number(),
+  reservoiridentifier: Type.String(),
+  reservoirname: Type.String(),
+  latestwaterdata: Type.Optional(ReservoirConditionDataSchema),
+  basinrainfall: Type.String(),
+  datetime: Type.String({ format: 'date-time' }),
+  dwl: Type.String(),
+  inflow: Type.String(),
+  nwlmax: Type.String(),
+});
 
-  basinrainfall: string;
-  datetime: string; // ISO 8601
-  dwl: string;
-  inflow: string;
-  nwlmax: string;
-}
+export type DailyOperationalStatisticsOfReservoir = Static<typeof DailyOperationalStatisticsOfReservoirSchema>;

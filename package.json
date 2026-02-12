@@ -14,5 +14,8 @@
   },
   "devDependencies": {
     "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "typebox": "^1.0.81"
   }
 }
